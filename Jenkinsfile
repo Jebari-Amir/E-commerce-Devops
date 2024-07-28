@@ -25,23 +25,23 @@ pipeline {
 
 
 
-        stage('Install Dependencies') {
-            steps {
-                script {
-                    // Installer les dépendances Node.js
-                    sh 'npm install'
-                }
-            }
-        }
+        // stage('Install Dependencies') {
+        //     steps {
+        //         script {
+        //             // Installer les dépendances Node.js
+        //             sh 'npm install'
+        //         }
+        //     }
+        // }
 
-        stage('Build') {
-            steps {
-                script {
-                    // Construire le projet Next.js
-                    sh 'npm run build'
-                }
-            }
-        }
+        // stage('Build') {
+        //     steps {
+        //         script {
+        //             // Construire le projet Next.js
+        //             sh 'npm run build'
+        //         }
+        //     }
+        // }
 
         
 
