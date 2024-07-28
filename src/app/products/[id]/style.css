@@ -1,0 +1,27 @@
+.rectangle {
+    border: 1px solid #ccc;
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 8px; /* Rayon des coins */
+    width: 360px; /* Largeur du rectangle */
+
+  }
+
+  .rectanglee {
+    border: 1px solid #ccc;
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 5px; /* Rayon des coins */
+    width: 120px; /* Largeur du rectangle */
+
+  }
+  
+  .card {
+    border: 1px solid #ccc;
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 8px; /* Rayon des coins */
+    width: 260px; /* Largeur du rectangle */
+    height: 100px;
+
+  }

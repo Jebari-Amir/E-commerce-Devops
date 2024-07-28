@@ -1,0 +1,13 @@
+.rectangle-container {
+  display: flex;
+  justify-content: space-between; /* Pour espacer les rectangles également */
+}
+
+.rectangle {
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 8px; /* Rayon des coins */
+  width: calc(50% - 4px); /* Largeur du rectangle */
+  height: 100px;
+}

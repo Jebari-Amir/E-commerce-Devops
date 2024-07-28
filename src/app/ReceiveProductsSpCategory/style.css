@@ -1,0 +1,16 @@
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .gridItem {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .productImage {
+    max-width: 100px;
+    max-height: 100px;
+  }
+  
