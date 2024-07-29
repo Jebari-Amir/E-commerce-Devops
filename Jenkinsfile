@@ -64,7 +64,7 @@ stage('Code Quality Check via SonarQube') {
                     // Publier le package sur Nexus
                     sh '''
                     npm pack
-                    curl -u admin:nexus --upload-file $(ls *.tgz) http://172.10.0.140:8081/#browse/browse:npm-releases/
+                    curl -u admin:nexus --upload-file $(ls *.tgz) http://172.10.0.140:8081/repository/npm-releases/
                     '''
                 }
             }
