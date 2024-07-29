@@ -34,15 +34,27 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        // stage('Build') {
+        //     steps {
+        //         script {
+        //             // Construire le projet Next.js
+        //             sh 'npm run build'
+        //         }
+        //     }
+        // }
+
+
+
+stage('Code Quality Check via SonarQube') {
             steps {
                 script {
-                    // Construire le projet Next.js
-                    sh 'npm run build'
+                    // Analyser la qualité du code avec SonarQube
+                    sh '''
+                    npx sonar-scanner -Dsonar.projectKey=cicd -Dsonar.projectName="cicd" -Dsonar.host.url=http://172.10.0.140:9000 -Dsonar.login=sqp_2d9c32825b84fd25555d9230e8b94561bfb89119
+                    '''
                 }
             }
         }
-
         
 
        
