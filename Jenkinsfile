@@ -48,24 +48,40 @@ pipeline {
        
     }
 
-   post {
-		success{
-		mail bcc: '', body: '''Dear Amir,
-we are happy to inform you that your pipeline build was successful. 
-Great work ! 
--Jenkins Team-''', cc: '', from: 'amir.jbari@esprit.tn', replyTo: '', subject: 'Build Finished - Success', to: 'amir.jbari@esprit.tn'
-		}
-		
-		failure{
-mail bcc: '', body: '''Dear Amir ,
-we are sorry to inform you that your pipeline build failed. 
-Keep working ! 
--Jenkins Team-''', cc: '', from: 'amir.jbari@esprit.tn', replyTo: '', subject: 'Build Finished - Failure', to: 'amir.jbari@esprit.tn'
-		}
-
-       always {
-		emailext attachLog: true, body: '', subject: 'Build finished',from: 'amir.jbari@esprit.tn' , to: 'amir.jbari@esprit.tn'
-            cleanWs()
-       }
+    post {
+        success {
+            echo 'Pipeline réussi!'
+        }
+        failure {
+            echo 'Pipeline échoué.'
+        }
     }
+
+
+
+
+
+//  post {
+// 		success{
+// 		mail bcc: '', body: '''Dear Amir,
+// we are happy to inform you that your pipeline build was successful. 
+// Great work ! 
+// -Jenkins Team-''', cc: '', from: 'amirj5353@gmail.com', replyTo: '', subject: 'Build Finished - Success', to: 'amirj5353@gmail.com'
+// 		}
+		
+// 		failure{
+// mail bcc: '', body: '''Dear Amir ,
+// we are sorry to inform you that your pipeline build failed. 
+// Keep working ! 
+// -Jenkins Team-''', cc: '', from: 'amirj5353@gmail.com', replyTo: '', subject: 'Build Finished - Failure', to: 'amirj5353@gmail.com'
+// 		}
+
+//        always {
+// 		emailext attachLog: true, body: '', subject: 'Build finished',from: 'amirj5353@gmail.com' , to: 'amirj5353@gmail.com'
+//             cleanWs()
+//        }
+//     }
+
+
+
 }
