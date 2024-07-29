@@ -58,19 +58,18 @@ stage('Code Quality Check via SonarQube') {
 
 
 
-    //      stage('Publish to Nexus') {
-    //         steps {
-    //             script {
-    //                 // Publier le package sur Nexus
-    //                 sh '''
-    //                 npm run build
-    //                 npm pack
-    //                 curl -u admin:nexus --upload-file $(ls *.tgz) http://172.10.0.140:8081/repository/npm-releases/
-    //                 '''
-    //             }
-    //         }
-    //     }
-    // }
+   stage('Publish to Nexus') {
+            steps {
+                script {
+                    // Publier le package sur Nexus
+                    sh '''
+                    npm run build
+                    npm pack
+                    curl -u admin:nexus --upload-file $(ls *.tgz) http://172.10.0.140:8081/#browse/browse:npm-releases/
+                    '''
+                }
+            }
+        }
         
 
        
