@@ -106,17 +106,7 @@ stage('Code Quality Check via SonarQube') {
 }
 
 
-    post {
-        success {
-            echo 'Pipeline réussi!'
-        }
-        failure {
-            echo 'Pipeline échoué.'
-        }
-    }
-
-
-
+   
 post {
         success {
             echo 'Pipeline réussi!'
