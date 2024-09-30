@@ -74,6 +74,37 @@ stage('Code Quality Check via SonarQube') {
        
     }
 
+   
+// Étapes de création et de publication d'image Docker
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    // Construire l'image Docker
+                    sh 'docker build -t amirovvv/Wumela-PFE .'
+                }
+            }
+        }
+
+        stage('Login to Docker Hub') {
+            steps {
+                script {
+                    // Connexion à Docker Hub
+                        sh 'docker login -u amirovvv --password dckr_pat_LAIjui5cw-3dOSsdt8AoUuVNZ5o'
+                }
+            }
+        }
+
+        stage('Push Docker Image') {
+            steps {
+                script {
+                    // Pusher l'image vers Docker Hub
+                    sh 'docker push amirovvv/Wumela-PFE'
+                }
+            }
+        }
+
+
+
     post {
         success {
             echo 'Pipeline réussi!'
@@ -84,6 +115,21 @@ stage('Code Quality Check via SonarQube') {
     }
 
 
+
+post {
+        success {
+            echo 'Pipeline réussi!'
+            mail to: 'amirj5353@gmail.com',
+                 subject: "Pipeline réussi: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: "Le pipeline a réussi avec succès. Consultez les détails ici: ${env.BUILD_URL}"
+        }
+        failure {
+            echo 'Pipeline échoué.'
+            mail to: 'amirj5353@gmail.com',
+                 subject: "Échec du pipeline: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: "Le pipeline a échoué. Consultez les détails ici: ${env.BUILD_URL}"
+        }
+    }
 
 
 
