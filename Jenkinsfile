@@ -72,7 +72,7 @@ stage('Code Quality Check via SonarQube') {
         
 
        
-    }
+    
 
    
 // Étapes de création et de publication d'image Docker
@@ -103,6 +103,7 @@ stage('Code Quality Check via SonarQube') {
             }
         }
 
+}
 
 
     post {
