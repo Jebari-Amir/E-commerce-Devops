@@ -80,7 +80,7 @@ stage('Code Quality Check via SonarQube') {
             steps {
                 script {
                     // Construire l'image Docker
-                    sh 'docker build -t amirovvv/Wumela-PFE .'
+                    sh 'docker build -t amirovvv/wumela-pfe .'
                 }
             }
         }
@@ -98,7 +98,7 @@ stage('Code Quality Check via SonarQube') {
             steps {
                 script {
                     // Pusher l'image vers Docker Hub
-                    sh 'docker push amirovvv/Wumela-PFE'
+                    sh 'docker push amirovvv/wumela-pfe'
                 }
             }
         }
